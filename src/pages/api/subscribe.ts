@@ -14,7 +14,7 @@ type User  = {
 }
 
 export const subscribe = async (req:NextApiRequest, res: NextApiResponse) => {
-  if(req.method==='POST') {
+  if (req.method === 'POST') {
     const session = await getSession({ req });
 
     const user = await fauna.query<User>(
@@ -28,7 +28,7 @@ export const subscribe = async (req:NextApiRequest, res: NextApiResponse) => {
 
     let customerId = user.data.stripe_customer_id;
 
-    if(!customerId) {
+    if (!customerId) {
       const stripeCustomer = await stripe.customers.create({
         email:session.user.email,
       })
