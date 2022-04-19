@@ -1,0 +1,12 @@
+{
+  "_cts": {
+    "Post": {
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    }
+  }
+}
