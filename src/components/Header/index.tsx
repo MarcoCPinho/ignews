@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { SignInButton } from "../SignInButton";
 import styles from "./styles.module.scss";
+import Link from "next/link";
 
 export const Header = () => {
   return (
@@ -13,8 +14,12 @@ export const Header = () => {
           height="120rem"
         />
         <nav>
-          <a className={styles.active}>Home</a>
-          <a>Posts</a>
+          <Link href="/">
+            <a className={styles.active}>Home</a>
+          </Link>
+          <Link href="/post">
+            <a>Posts</a>
+          </Link>
         </nav>
 
         <SignInButton />
